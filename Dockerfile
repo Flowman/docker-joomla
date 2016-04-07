@@ -11,7 +11,7 @@ RUN \
     && adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
     && apk add --update \
         curl \
-    && rm -fr /var/cache/apk/*
+    && rm -fr /var/cache/apk/* \
 	&& curl -o joomla.zip -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.zip \
 	#&& echo "$JOOMLA_SHA1 *joomla.zip" | sha1sum -c - \
 	&& unzip joomla.zip -d /usr/share/nginx/html \
