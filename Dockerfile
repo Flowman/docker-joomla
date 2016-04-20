@@ -25,5 +25,3 @@ RUN chmod +x /docker-entrypoint.sh
 VOLUME ["/usr/share/nginx/html"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-
-cd /usr/share/nginx/html
