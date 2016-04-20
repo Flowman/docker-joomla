@@ -14,8 +14,8 @@ RUN \
     && rm -fr /var/cache/apk/* \
 	&& curl -o joomla.zip -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.zip \
 	#&& echo "$JOOMLA_SHA1 *joomla.zip" | sha1sum -c - \
-	&& mkdir -p /tmp/html \
-	&& unzip joomla.zip -d /tmp/html \
+	&& mkdir -p /data/html \
+	&& unzip joomla.zip -d /data/html \
 	&& rm joomla.zip
 
 COPY ./docker-entrypoint.sh /
@@ -25,3 +25,5 @@ RUN chmod +x /docker-entrypoint.sh
 VOLUME ["/usr/share/nginx/html"]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
+cd /usr/share/nginx/html
