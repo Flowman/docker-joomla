@@ -12,15 +12,15 @@ This image is based on the popular Alpine Linux project, available in the alpine
 
 ## Usage
 
-```
-$ docker run -d flowman/joomla:tag
+```bash
+docker run -d flowman/joomla:tag
 ```
 
 ## ... via `docker-compose`
 
 Example Rancher docker-compose stack
 
-```
+```yaml
 nginx:
   image: flowman/nginx:1.10.0
   labels:
@@ -46,7 +46,7 @@ www-data:
 
 Example docker-compose file
 
-```
+```yaml
 version: '2'
 services:
   nginx:
@@ -71,7 +71,7 @@ services:
 
 For example, if you need to change Joomla version, edit the Dockerfile and than build-it.
 
-```
+```bash
 git clone git@github.com:Flowman/docker-joomla.git
 cd ./docker-joomla
 docker build --rm -t flowman/joomla .
