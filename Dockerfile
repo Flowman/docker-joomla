@@ -3,8 +3,7 @@ FROM alpine:latest
 MAINTAINER Peter Szalatnay <theotherland@gmail.com>
 
 # Define Joomla version and expected SHA1 signature
-ENV JOOMLA_VERSION 3.5.1
-#ENV JOOMLA_SHA1 8c88f079f31774adc9d2682067beabc057c541aa
+ENV JOOMLA_VERSION=3.5.1 #JOOMLA_SHA1=
 
 RUN \
     addgroup -S nginx \
